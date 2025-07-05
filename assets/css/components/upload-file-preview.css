@@ -1,0 +1,80 @@
+.file-preview {
+  position: fixed;
+  bottom: 20px; /* More appropriate for mobile */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 800px;
+  width: calc(100% - 40px); /* More padding on mobile */
+  background: rgba(34, 34, 34, 0.9);
+  padding: 12px 16px; /* Adjusted padding */
+  border-radius: 12px; /* Slightly smaller for mobile */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Slightly smaller gap for mobile */
+  z-index: 1001;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Smaller shadow for mobile */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+/* Mobile-first approach */
+@media (min-width: 768px) {
+  .file-preview {
+    bottom: 95px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    gap: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.file-preview:hover {
+  background: rgba(34, 34, 34, 0.95);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.file-preview img {
+  max-height: 42px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.file-preview i {
+  font-size: 24px;
+  color: #93c5fd;
+}
+
+.file-preview span {
+  font-size: 15px;
+  word-break: break-word;
+  max-width: calc(100% - 100px); /* More responsive max-width */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .file-preview {
+    width: calc(100% - 30px);
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  
+  .file-preview img {
+    max-height: 36px;
+  }
+  
+  .file-preview i {
+    font-size: 20px;
+  }
+  
+  .file-preview span {
+    font-size: 14px;
+    max-width: calc(100% - 80px);
+  }
+}

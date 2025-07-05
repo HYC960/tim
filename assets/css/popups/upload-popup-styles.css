@@ -1,0 +1,61 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+    }
+
+    .upload-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      color: #ffffff;
+      z-index: 9999;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .upload-icon {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+    }
+
+    .upload-text {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.6;
+      max-width: 90%;
+    }
+
+    @media (max-width: 600px) {
+      .upload-icon {
+        width: 80px;
+        height: 80px;
+      }
+
+      .upload-text {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+    }
+
+    
